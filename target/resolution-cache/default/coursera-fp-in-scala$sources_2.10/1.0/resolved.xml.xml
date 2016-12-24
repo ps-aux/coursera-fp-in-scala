@@ -4,7 +4,7 @@
 		module="coursera-fp-in-scala$sources_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20161224194523"
+		publication="20161224195928"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
