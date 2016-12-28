@@ -1,3 +1,8 @@
+import week3.Empty
+import week3.NonEmpty
+
+
+
 trait List[+T] {
 
   def isEmpty: Boolean
@@ -5,6 +10,11 @@ trait List[+T] {
   def head: T
 
   def tail: List[T]
+
+  /**
+    * Week 4
+    */
+  def prepend[U >: T](elem: U): List[U] = new Cons(elem, this)
 
 }
 
@@ -35,4 +45,5 @@ def nth[T](l: List[T], index: Int): T =
 
 val l = new Cons(3, new Cons(2, Nil))
 
-l
+
+def f(xs: List[NonEmpty], x: Empty) = xs prepend x
