@@ -40,9 +40,9 @@ class HuffmanSuite extends FunSuite {
 
     new TestTrees {
       val res = times(timesL)
-      assert(find('a',res) === 3)
-      assert(find('b',res) === 2)
-      assert(find('c',res) === 1)
+      assert(find('a', res) === 3)
+      assert(find('b', res) === 2)
+      assert(find('c', res) === 1)
     }
   }
 
@@ -62,10 +62,15 @@ class HuffmanSuite extends FunSuite {
     assert(combine(leaflist) === List(Fork(Leaf('e', 1), Leaf('t', 2), List('e', 't'), 3), Leaf('x', 4)))
   }
 
-
   test("decode and encode a very short text should be identity") {
     new TestTrees {
-      assert(decode(t1, encode(t1)("ab".toList)) === "ab".toList)
+      assert(decode(t1, encode(t1)("abaa".toList)) === "abaa".toList)
+    }
+  }
+
+  test("decode and quickEncode are identity") {
+    new TestTrees {
+      assert(decode(t1, quickEncode(t1)("abaaba".toList)) === "abaaba".toList)
     }
   }
 

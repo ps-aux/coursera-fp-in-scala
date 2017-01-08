@@ -62,3 +62,8 @@ def insert(x: Int, xs: List[Int]): List[Int] = xs match {
 
 isort(l)
 
+def foo(x: Int)(y: Int) = x * y
+
+//val x = foo(5)
+
+def f = foo(3)(4)
